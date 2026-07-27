@@ -1,15 +1,16 @@
 ---
-title: Tracepoints and monitoring the Bitcoin network
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel
+title: 'Tracepoints and monitoring the Bitcoin network'
+transcript_by: 'Inter442 via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel'
+date: '2022-06-06'
 tags: []
 speakers:
   - '0xB10C'
-date: 2022-06-06
+categories: []
 aliases:
-  - /chaincode-labs/chaincode-podcast/tracepoints-and-monitoring-the-bitcoin-network/
+  - '/chaincode-labs/chaincode-podcast/tracepoints-and-monitoring-the-bitcoin-network/'
 ---
-Speaker 0: 00:00:00
+Host: 00:00:00
 
 Hey, Merch.
 What up?
@@ -18,7 +19,7 @@ We are back in the studio.
 Speaker 1: 00:00:02
 
 Who are we talking to today?
-We're talking to OXB10C.
+We're talking to `OxB10C`.
 
 Speaker 0: 00:00:06
 
