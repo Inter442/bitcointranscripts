@@ -8,6 +8,7 @@ speakers:
   - '0xB10C'
   - 'Matt Odell'
   - 'Andrew Chow'
+  - 'Marty Bent'
 categories:
   - 'podcast'
 aliases:
