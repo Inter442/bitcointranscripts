@@ -6,7 +6,6 @@ date: '2022-06-06'
 tags: []
 speakers:
   - '0xB10C'
-  - 'Matt Odell'
   - 'Andrew Chow'
   - 'Marty Bent'
 categories:
