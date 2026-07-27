@@ -7,6 +7,7 @@ tags:
   - 'bitcoin-core'
   - 'eclipse-attacks'
   - 'erlay'
+  - 'taproot'
 speakers:
   - '0xB10C'
   - 'Andrew Chow'
