@@ -7,6 +7,7 @@ tags: []
 speakers:
   - '0xB10C'
   - 'Matt Odell'
+  - 'Andrew Chow'
 categories:
   - 'podcast'
 aliases:
