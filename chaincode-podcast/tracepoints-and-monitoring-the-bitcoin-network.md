@@ -5,6 +5,7 @@ media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Trace
 date: '2022-06-06'
 tags:
   - 'bitcoin-core'
+  - 'eclipse-attacks'
 speakers:
   - '0xB10C'
   - 'Andrew Chow'
