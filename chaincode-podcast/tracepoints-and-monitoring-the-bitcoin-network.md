@@ -3,7 +3,8 @@ title: 'Tracepoints and monitoring the Bitcoin network'
 transcript_by: 'Inter442 via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel'
 date: '2022-06-06'
-tags: []
+tags:
+  - 'bitcoin-core'
 speakers:
   - '0xB10C'
   - 'Andrew Chow'
