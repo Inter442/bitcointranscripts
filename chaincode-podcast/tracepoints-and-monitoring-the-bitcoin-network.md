@@ -6,6 +6,7 @@ date: '2022-06-06'
 tags:
   - 'bitcoin-core'
   - 'eclipse-attacks'
+  - 'erlay'
 speakers:
   - '0xB10C'
   - 'Andrew Chow'
