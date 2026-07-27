@@ -6,31 +6,33 @@ date: '2022-06-06'
 tags: []
 speakers:
   - '0xB10C'
-  - 'Max Keidun'
-categories: []
+  - 'Matt Odell'
+categories:
+  - 'podcast'
 aliases:
   - '/chaincode-labs/chaincode-podcast/tracepoints-and-monitoring-the-bitcoin-network/'
 ---
-Host: 00:00:00
+Speaker 0: 00:00:00
 
 Hey, Merch.
 What up?
 We are back in the studio.
+
+Speaker 1: 00:00:02
+
 Who are we talking to today?
+We're talking to OXB10C.
 
-Merch: 00:00:04
-We're talking to `OxB10C`.
-
-Host: 00:00:06
+Speaker 0: 00:00:06
 
 I know him as Timo.
 So we're going to call him Timo.
 
-Merch: 00:00:09
+Speaker 1: 00:00:09
 
 OK, fine.
 
-Host: 00:00:12
+Speaker 0: 00:00:12
 
 It doesn't quite roll off the tongue.
 Is there anything in particular that you're interested in learning from Timo today?
