@@ -11,7 +11,6 @@ tags:
 speakers:
   - '0xB10C'
   - 'Andrew Chow'
-  - 'Marty Bent'
   - 'Mark Erhardt'
 categories:
   - 'podcast'
