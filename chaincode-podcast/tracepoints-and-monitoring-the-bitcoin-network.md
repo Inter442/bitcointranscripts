@@ -240,6 +240,11 @@ And I think that's really important for us to know if that happens and maybe to 
 Andrew Chow: 00:05:06
 
 I'm sure there are shenanigans happening.
+
+OxB10C: 00:05:06
+Yeah
+
+Andrew Chow: 00:05:08
 So like, how do you raise the flag or how do you call that to the community's attention?
 Or is that our job?
 
@@ -253,8 +258,17 @@ I don't know, I would tweet about it, I would blog about it.
 Merch: 00:05:23
 
 I mean that works, right?
-Looking at the Taproot activation, your `mining pool observer` picked up that some mining pools were not mining `pay-to-Taproot`, even though it was active at that point.
+
+oxB10C: 00:05:25
+Yeah
+
+Merch: 00:05:25
+Looking at the Taproot activation, your `mining pool observer` picked up that some mining pools were not mining `pay-to-Taproot` transactions, even though it was active at that point.
+
+Andrew Chow: 00:05:36
 Yeah.
+
+Merch: 00:05:37
 And yeah, that definitely got seen.
 
 Andrew Chow: 00:05:38
@@ -320,11 +334,10 @@ Their peers couldn't relay these `pay-to-Taproot` spends because they are non-st
 Merch: 00:07:34
 
 So basically they were up to date and ready to go and actually correctly signaling, but just didn't see the Taproot transactions because their peers filtered them out and dropped them as nonstandard.
-Correct.
+
 
 OxB10C: 00:07:45
-
-Yeah.
+Correct, yeah.
 
 Andrew Chow: 00:07:46
 
@@ -343,8 +356,15 @@ Andrew Chow: 00:08:13
 
 Cool.
 And so, I mean, this is the service that you provide to the community.
+
+OxB10C: 00:08:17
 Correct.
+
+Andrew Chow: 00:08:17
 It's open source and you're being supported by Brink currently.
+
+OxB10C: 00:08:20
+Yes
 
 ## Why monitor the network?
 
@@ -364,7 +384,7 @@ And you might want to know if there's censorship and say, okay, this isn't worki
 
 Andrew Chow: 00:09:09
 
-Other, other things that you've observed running the `mining pool observer` as to how pools operate, whether that's how they figure out what tracks transactions go into blocks or things like learning about the custom code in terms of their peer set, things like that.
+Are there other things that you've observed running the `mining pool observer` as to how pools operate, whether that's how they figure out what tracks transactions go into blocks or things like learning about the custom code in terms of their peer set, things like that.
 Are there other things that have come to light?
 
 ## Template discrepancies between pools and monitor
@@ -384,7 +404,11 @@ And of course transaction accelerators for example `ERPC` runs a transaction acc
 Merch: 00:10:32
 
 So you would say that generally you see all the mining pools you're observing as using the same block building as `Bitcoin Core`?
+
+OxB10C: 00:10:40
 Yes.
+
+Merch: 00:10:40
 But they sometimes prioritize transactions because of out of band or their own usage.
 
 OxB10C: 00:10:45
@@ -404,6 +428,8 @@ Right
 Andrew Chow: 00:10:59
 
 Well, that's Maybe more fodder for why, Mark, you should be continuing to work on that project.
+
+Merch: 00:11:05
 Yeah, I know.
 
 ## `User-space Statically Defined Tracing` (`USDT`)
@@ -503,7 +529,7 @@ OxB10C: 00:16:01
 
 Also one downside of the `trace points` is there's only `trace points` on `Linux`.
 We don't have them on Windows.
-We don't have them on `macOS`, for example, and `OpenBSD`, for example, as well.
+We don't have them on macOS, for example, and `OpenBSD`, for example, as well.
 They just don't exist because they don't run the `Linux` kernel and we can't use them for debugging or anything out there.
 So if there's some enterprise users running `Bitcoin Core` on Windows for whatever reason.
 
@@ -521,7 +547,7 @@ Merch: 00:16:33
 
 Maybe one comment for our power users listening, these `trace points` only evaluate locally, there's no telemetry in `Bitcoin Core`.
 It's just you, yourself on your own machine can hook into it.
-I guess maybe that would be another concern though, if you had other software running on your computer and there was abundant `trace points` everywhere, BiWare could perhaps listen to what your `Bitcoin Core` is doing locally.
+I guess maybe that would be another concern though, if you had other software running on your computer and there was abundant `trace points` everywhere, malware could perhaps listen to what your `Bitcoin Core` is doing locally.
 
 Andrew Chow: 00:16:56
 
@@ -556,12 +582,16 @@ Merch: 00:18:02
 
 Oh, I could see enterprises being super interested in having a closer look at what their nodes are doing, how they're connected and that sort of thing.
 And it enables people to donate their logs more easily, maybe.
+
+OxB10C: 00:18:17
 Probably, yeah.
+
+Merch: 00:18:18
 If we see fun stuff, like what we talked to Martin about.
-Yeah.
+
 
 Andrew Chow: 00:18:19
-
+Yeah.
 Do you want to explain what that means?
 
 Merch: 00:18:21
@@ -593,7 +623,7 @@ Yeah, it was, I think It was raised to GMAX's attention on a Bitcoin Talk forum,
 But without someone combing BitcoinTalk forum, it wouldn't necessarily...
 
 OxB10C: 00:19:43
-
+Yeah.
 In the end, there was a paper about it, and so it definitely got attention.
 But I think it could have happened that nobody reported it or the core development process, people involved in that never heard about it.
 
@@ -607,7 +637,7 @@ OxB10C: 00:20:04
 Yeah, and there are different attacks on the `P2P` networks*.
 We do early on, one idea was maybe we can even detect somebody trying to eclipse us and they keep opening connections and so on.
 Obviously, I think that's a really hard challenge and you probably have better defense by just having another out of bounds source of your block headers.
-But this might be, might be an interesting way of detecting attacks that we don't know about or learning about attacks that are actually performed on Inverter.
+But this might be, might be an interesting way of detecting attacks that we don't know about or learning about attacks that are actually performed on the network.
 We don't know even about yet.
 
 Andrew Chow: 00:20:35
@@ -701,7 +731,11 @@ Merch: 00:23:49
 
 And yeah.
 So your non-early peer or your node that wasn't running early and the one that was running early were all connecting to early peers.
+
+OxB10C: 00:23:57
 Correct, yeah.
+
+Merch: 00:23:57
 And it reduced the bandwidth use by 15% or so.
 
 OxB10C: 00:24:01
@@ -752,9 +786,18 @@ One of my favorite websites, `transactionfee.info`, where I quote a lot of chart
 Andrew Chow: 00:24:42
 
 Well, you can pay him off with a lot of likes.
+
+Merch: 00:24:45
 I already bought him breakfast.
 Seems like a fair trade.
+
+Andrew Chow: 00:24:48
 All right, well thank you for joining us and we will have hopefully another episode out shortly.
 Thanks.
+
+[Theme song]: 00 :25:03
+Have fun here
+
+
 
 
