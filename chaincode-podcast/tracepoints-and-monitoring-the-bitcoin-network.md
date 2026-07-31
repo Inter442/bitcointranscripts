@@ -496,7 +496,7 @@ OxB10C: 00:13:42
 So one project I've heard about from someone is that they are using it for debugging or actually simulating the `coin selection` in Bitcoin Core's Wallet.
 Maybe Merch can talk about that.
 
-Merch: 00:13:54
+Merch: 00:13:54 
 
 Andrew Chow and I have been using it very extensively in the past week.
 So Andy added `trace points` in the `coin selection` to learn which algorithm was used to produce an input set out of the ones that were proposed, which one was preferred, whether we managed to avoid partial spending of a key and things like that.
