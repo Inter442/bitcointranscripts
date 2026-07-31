@@ -19,13 +19,13 @@ aliases:
 ---
 Andrew Chow: 00:00:00
 
-Hey, Marty.
+Hey, Merch.
 What up?
 We are back in the studio.
-
-Marty: 00:00:02
-
 Who are we talking to today?
+
+Merch: 00:00:02
+
 We're talking to OxB10C.
 
 Andrew Chow: 00:00:06
@@ -33,7 +33,7 @@ Andrew Chow: 00:00:06
 I know him as Timo.
 So we're going to call him Timo.
 
-Marty: 00:00:09
+Merch: 00:00:09
 
 OK, fine.
 
@@ -42,7 +42,7 @@ Andrew Chow: 00:00:12
 It doesn't quite roll off the tongue.
 Is there anything in particular that you're interested in learning from Timo today?
 
-Marty: 00:00:17
+Merch: 00:00:17
 
 Yeah, I think we need to talk about `Tether`.
 What he's doing with `Tether` and Bitcoin.
@@ -51,7 +51,7 @@ Andrew Chow: 00:00:22
 
 I'm not sure everybody's going to get that joke.
 
-Marty: 00:00:24
+Merch: 00:00:24
 
 That's fine.
 
@@ -60,27 +60,31 @@ Andrew Chow: 00:00:25
 That's it?
 You got to explain that?
 
-Marty: 00:00:29
+Merch: 00:00:29
 
 All right, fine.
 `USDT` is `User-Space Statically Defined Tracing`.
+
+Andrew Chow:00:00:34
 Also rolls off the tongue.
+
+Merch : 00:00:37
 Totally.
 Also a short moniker for tether.
 That's why.
 
-OxB10C: 00:00:42
+Andrew Chow: 00:00:42
 
 Got it.
 
-Andrew Chow: 00:00:42
-
+Merch: 00:00:42
 That's the term.
+
+Andrew Chow: 00:00:42
 Well, we will talk to Timo about `trace points`.
-
-Marty: 00:00:45
-
 Anything else?
+
+Merch: 00:00:45
 Taproot activation and mining pool observation.
 
 Andrew Chow: 00:00:49
@@ -89,7 +93,7 @@ Yeah.
 That's what I think.
 He knows all that stuff.
 
-Marty:00:00:52
+Merch:00:00:52
 yeah
 
 Andrew Chow:00:00:53
@@ -99,16 +103,20 @@ Hope you enjoy it, too.
 
 ## What he's been up to since the residency
 
-Andrew Chow: 00:01:05
+Andrew Chow: 00:01:06
 
 Timo, welcome back to the Chaincode office.
 You've been here before.
+
+OxB10C:00:01:10
 Correct, yes.
+
+Andrew Chow: 00:01:13
 Yes.
-
-OxB10C: 00:01:13
-
 Tell us last time.
+
+OxB10C:00:01:14
+
 Yeah, it has been three years now.
 
 Andrew Chow: 00:01:15
@@ -118,10 +126,10 @@ Nothing's happened since then.
 OxB10C: 00:01:16
 
 No, nothing at all.
+No, it's been the same.
 
 Andrew Chow: 00:01:17
 
-No, it's been the same.
 Timo was in the 2019 residency, the last in-person residency that we ran.
 And in this very room was heckling our various presenters about Bitcoin and Lightning.
 And we did those two weeks of seminars.
@@ -132,7 +140,7 @@ OxB10C: 00:01:37
 
 After that, actually, I joined a startup in Zurich, the Shift Crypto guys.
 We worked on Plug and Play Bitcoin node.
-And I later moved on to Coin metrics, did some `mempool` monitoring there, did some mining pool monitoring there, for example, which blocks mining pools mine on and so on, connecting to these certain pools and seeing what they're giving out to the miners.
+And I later moved on to Coinmetrics, did some `mempool` monitoring there, did some mining pool monitoring there, for example, which blocks mining pools mine on and so on, connecting to these certain pools and seeing what they're giving out to the miners.
 
 Andrew Chow: 00:02:00
 
@@ -197,7 +205,7 @@ We can see people following fee rates or the estimates of the fee rates.
 We can actually see people doing consolidations, doing best payments, doing `RBF` and so on.
 That's really interesting to observe and learn from and see the patterns emerging there.
 
-Marty: 00:03:51
+Merch: 00:03:51
 
 One pattern that I really enjoyed looking at was multi-sig.
 You could split out the specific types of multi-sig and fee rate estimations as an overlay.
@@ -242,7 +250,7 @@ I don't know, I would tweet about it, I would blog about it.
 
 ## Mining pools not mining `P2TR` at Taproot activation
 
-Marty: 00:05:23
+Merch: 00:05:23
 
 I mean that works, right?
 Looking at the Taproot activation, your `mining pool observer` picked up that some mining pools were not mining `pay-to-Taproot`, even though it was active at that point.
@@ -309,7 +317,7 @@ So by the time the fourth block arrived, all these Taproot spends were confirmed
 And it later turned out that these pools had upgraded in time, burned for signaling, but the issue was that their peers were old and they had some weird manual peer configuration, which then caused problems for them.
 Their peers couldn't relay these `pay-to-Taproot` spends because they are non-standard for them.
 
-Marty: 00:07:34
+Merch: 00:07:34
 
 So basically they were up to date and ready to go and actually correctly signaling, but just didn't see the Taproot transactions because their peers filtered them out and dropped them as nonstandard.
 Correct.
@@ -373,7 +381,7 @@ Some other times we for example see the payouts and consideration transactions f
 So they don't specify any fees, they are not related on the network and we can detect them being included there.
 And of course transaction accelerators for example `ERPC` runs a transaction accelerator, you pay an out-of-band fee and they include your low fee transaction really early on in their block and we can see that for example.
 
-Marty: 00:10:32
+Merch: 00:10:32
 
 So you would say that generally you see all the mining pools you're observing as using the same block building as `Bitcoin Core`?
 Yes.
@@ -383,7 +391,7 @@ OxB10C: 00:10:45
 
 Yeah, I think they use the `ERPC` prioritized transaction.
 
-Marty: 00:10:49
+Merch: 00:10:49
 
 So it's consistent with `Bitcoin Core` being run by all of them?
 
@@ -430,7 +438,7 @@ So the more `trace points` you have, the less readable your code gets, I say.
 And obviously, when you actually don't use the `trace points`, you have like very minimal overhead.
 But if you hook into the trace point then you have a small overhead because you're running more code you have more overhead there.
 
-Marty: 00:12:37
+Merch: 00:12:37
 
 So if you compile it with the `trace points` disabled oh yeah it's actually not a noticeable difference.
 
@@ -439,7 +447,7 @@ OxB10C: 00:12:43
 Correct yeah there's a macro in there and it actually evaluates to nothing.
 So if you don't enable, during compile time, enable the `trace points`, you don't see anything there.
 
-Marty: 00:12:53
+Merch: 00:12:53
 
 But for us developers that want to know what's going on internally and get detailed information at various points, We can turn on the `trace points`, it's a compiler flag, and then this suddenly results to these kernel events being...
 
@@ -447,10 +455,10 @@ OxB10C: 00:13:09
 
 Yeah, actually, in this time it's not really the kernel events.
 We hook in over the kernel and put the `Linux` kernel into that.
-And one thing to note is that currently in the latest release, the `Guix` builds actually include the dependency and the release builds with `trace points` enabled.
+And one thing to note is that currently in the latest release, the `guix` builds actually include the dependency and the release builds with `tracepoints` enabled.
 Somebody running `Bitcoin Core` in production, for example, an exchange or another service, for example, or a user even can actually use the `trace points` and debug their system if they need to.
 
-## Using `trace points` to simulate `coin selection`
+## Using `tracepoints` to simulate `coin selection`
 
 Andrew Chow: 00:13:37
 
@@ -460,16 +468,16 @@ Have you seen projects that have been used really taking advantage of these `tra
 OxB10C: 00:13:42
 
 So one project I've heard about from someone is that they are using it for debugging or actually simulating the `coin selection` in Bitcoin Core's Wallet.
-Maybe Marty can talk about that.
+Maybe Merch can talk about that.
 
-Marty: 00:13:54
+Merch: 00:13:54
 
 Andrew Chow and I have been using it very extensively in the past week.
 So Andy added `trace points` in the `coin selection` to learn which algorithm was used to produce an input set out of the ones that were proposed, which one was preferred, whether we managed to avoid partial spending of a key and things like that.
 And we have a project with which we have been simulating different fee rate scenarios and basically benchmarking improvements that we're trying to make to the `Bitcoin Core` wallet.
 And it's a means for us to convince ourselves and hopefully also our peers that the improvements we're making to the wallet are actually going to benefit the overall health of the network and make it cheaper for the users to use and more private.
 
-## Why are `trace points` in production code?
+## Why are `tracepoints` in production code?
 
 Andrew Chow: 00:14:39
 
@@ -479,7 +487,7 @@ As in, PDB is not supposed to make its way into a production app.
 And so when you're making a call to provide a trace point and ship it for a release, what's the delineation between that being a good idea versus us just adding a trace point when we're doing a `PR` and then providing that data on the `PR`.
 Why production versus when you're sort of using it in the debugging world?
 
-Marty: 00:15:11
+Merch: 00:15:11
 
 Yeah I think we don't want to plaster the whole code base with them because they add a maintenance burden.
 And if you add them in points that aren't known to be useful, it would be a wasted effort.
@@ -509,17 +517,17 @@ Yeah.
 Then they can't debug it.
 But we might also want to make sure our Windows builds are okay, even if that's not the enterprise user.
 
-Marty: 00:16:33
+Merch: 00:16:33
 
 Maybe one comment for our power users listening, these `trace points` only evaluate locally, there's no telemetry in `Bitcoin Core`.
 It's just you, yourself on your own machine can hook into it.
-I guess maybe that would be another concern though, if you had other software running on your computer and there was abundant `trace points` everywhere, malware could perhaps listen to what your `Bitcoin Core` is doing locally.
+I guess maybe that would be another concern though, if you had other software running on your computer and there was abundant `trace points` everywhere, BiWare could perhaps listen to what your `Bitcoin Core` is doing locally.
 
 Andrew Chow: 00:16:56
 
 Oh, but I even think that'd be, I mean, I think it'd be better is to have a partner piece of software that gathers these `trace points`, organizes them, keeps a historical record over time, etc.
 
-## Using `trace points` for `P2P` monitoring
+## Using `tracepoints` for `P2P` monitoring
 
 Andrew Chow: 00:17:04
 
@@ -544,7 +552,7 @@ Like my idea of the project, what I'm working on is just providing an interface 
 So making that really easy and providing interface for people where, for example, why did a quick `python script` and just run that `python script` that filters out the relevant stuff for them.
 That's the goal, yeah.
 
-Marty: 00:18:02
+Merch: 00:18:02
 
 Oh, I could see enterprises being super interested in having a closer look at what their nodes are doing, how they're connected and that sort of thing.
 And it enables people to donate their logs more easily, maybe.
@@ -556,7 +564,7 @@ Andrew Chow: 00:18:19
 
 Do you want to explain what that means?
 
-Marty: 00:18:21
+Merch: 00:18:21
 
 Yeah.
 I think that episode's not out yet.
@@ -568,7 +576,7 @@ OxB10C: 00:18:45
 
 Oh, yeah.
 
-Marty: 00:18:45
+Merch: 00:18:45
 
 And we dissected that story a little bit with Martin and looked a little bit at the peculiarities of the address relay, how sending small chunks would carry further than sending big buckets of them and things like that.
 
@@ -582,14 +590,14 @@ But from my perspective, this was just a coincidence that we actually saw that h
 Andrew Chow: 00:19:28
 
 Yeah, it was, I think It was raised to GMAX's attention on a Bitcoin Talk forum, which then got relayed to more active folks.
-But without someone combing Bitcoin Talk forum, it wouldn't necessarily...
+But without someone combing BitcoinTalk forum, it wouldn't necessarily...
 
 OxB10C: 00:19:43
 
 In the end, there was a paper about it, and so it definitely got attention.
 But I think it could have happened that nobody reported it or the core development process, people involved in that never heard about it.
 
-Marty: 00:19:55
+Merch: 00:19:55
 
 Yeah.
 Making peer-to-peer traffic more readable and more accessible to regular users would maybe enable more of that to come to attention.
@@ -607,7 +615,7 @@ Andrew Chow: 00:20:35
 Yeah, I think sharing information from nodes that aren't necessarily connected is probably pretty important for the health of the network generally and this is something that Ethan Heilman brought up when he spoke at the residency of just doing better health monitoring.
 And it seems like that is still pretty infantile in terms of the kinds of things that we still need.
 
-Marty: 00:20:55
+Merch: 00:20:55
 
 Should we popularize something like finding a buddy whose node you connect to?
 In general, you have a friend and just always connect or add that node.
@@ -616,7 +624,7 @@ OxB10C: 00:21:07
 
 Maybe, or even if you run multiple nodes, maybe connect them, maybe, I don't know.
 
-Marty: 00:21:11
+Merch: 00:21:11
 
 Yeah, so I know that there's eight outbound peers, there's two blocks only peers that we use as anchors, and there's the feeler connection.
 And the added nodes are in addition, right?
@@ -629,7 +637,7 @@ Yeah.
 On the other hand, we have done, I think a lot of work on mitigating `Eclipse attacks`.
 Maybe there are other attacks we haven't invested so much in, or that could be more relevant to focus on.
 
-Marty: 00:21:53
+Merch: 00:21:53
 
 Right.
 Right.
@@ -639,7 +647,7 @@ Andrew Chow: 00:21:59
 
 Yeah.
 
-## Using `trace points` to review `PR`s
+## Using `tracepoints` to review `PR`s
 
 Andrew Chow: 00:21:59
 
@@ -654,11 +662,11 @@ Actually, for example, looking at some `P2P` changes and actually seeing the pro
 And that actually for me personally has helped because I'm not the guy that sits in front of the `C++` code and reads it all day.
 I'm more the guy that looks at it visually, for example, or in some way, filter it, looks at what's happening and not what should happen.
 
-## Benchmarking `Erlay` with `USDT`
+## Benchmarking `erlay` with `USDT`
 
 Andrew Chow: 00:22:42
 
-Let's take something like `Erlay`.
+Let's take something like `erlay`.
 
 OxB10C: 00:22:45
 
@@ -666,16 +674,16 @@ Yeah, right.
 
 Andrew Chow: 00:22:45
 
-So talk to me about how `trace points` might help with `Erlay`.
+So talk to me about how `tracepoints` might help with `erlay`.
 
 OxB10C: 00:22:49
 
-Right, so the goal of `Erlay` is to reduce the bandwidth usage for transaction propagation.
-And one thing I did with the `trace points` is I ran an `Erlay` patch node from the `PR` and I ran master node and compared those two and the bandwidths that we're using, they're connecting to the same peers and we could actually measure the bandwidth usage of both.
+Right, so the goal of `erlay` is to reduce the bandwidth usage for transaction propagation.
+And one thing I did with the `tracepoints` is I ran an `erlay` patch node from the `PR` and I ran master node and compared those two and the bandwidths that we're using, they're connecting to the same peers and we could actually measure the bandwidth usage of both.
 We saw the early node using far less, I think only 85% or so, or even less bandwidth for `transaction relay` than the master node.
-So that's really, and I think that was really helpful for Gleb or at least he communicated that he needs people to actually evaluate his changes and back test his simulations, for example, in the real world.
+So that's really, and I think that was really helpful for Gleb or at least he communicated that he needs people to actually evaluate his changes and backtest his simulations, for example, in the real world.
 
-Marty: 00:23:34
+Merch: 00:23:34
 
 So that's really interesting.
 Were the other peers that you were testing against also running the early patch?
@@ -689,7 +697,7 @@ Yeah.
 So Gleb ran, I think, 12 early peers.
 I ran one master and then one early peer.
 
-Marty: 00:23:49
+Merch: 00:23:49
 
 And yeah.
 So your non-early peer or your node that wasn't running early and the one that was running early were all connecting to early peers.
@@ -728,7 +736,7 @@ All right.
 So another conversation in the books.
 Any takeaways from our conversation with Timo?
 
-Marty: 00:24:27
+Merch: 00:24:27
 
 That was fun, short and sweet.
 
@@ -736,7 +744,7 @@ Andrew Chow: 00:24:30
 
 He's up to a lot of good things for the health of the ecosystem.
 
-Marty: 00:24:33
+Merch: 00:24:33
 
 Yeah, I need to make another shout out.
 One of my favorite websites, `transactionfee.info`, where I quote a lot of charts from, is also run by Timo.
