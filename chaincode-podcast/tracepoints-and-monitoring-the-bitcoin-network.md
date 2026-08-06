@@ -10,7 +10,6 @@ tags:
   - 'taproot'
 speakers:
   - '0xB10C'
-  - 'Andrew Chow'
   - 'Mark Erhardt'
 categories:
   - 'podcast'
