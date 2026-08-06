@@ -9,7 +9,6 @@ tags:
   - 'erlay'
   - 'taproot'
 speakers:
-  - '0xB10C'
   - 'Mark Erhardt'
   - 'Adam Jonas'
 categories:
