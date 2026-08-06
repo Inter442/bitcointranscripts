@@ -11,6 +11,7 @@ tags:
 speakers:
   - 'Mark Erhardt'
   - 'Adam Jonas'
+  - '0xB10C'
 categories:
   - 'podcast'
 aliases:
